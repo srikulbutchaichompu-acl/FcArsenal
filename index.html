@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Arsenal FC — The Gunners. ประวัติ สโมสร ผู้เล่น เกียรติประวัติ และข่าวสาร">
+  <title>ARSENAL — The Gunners | Official-inspired Club Experience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { arsenal: { red:'#DB0007', deep:'#9C0005', navy:'#071B3B', gold:'#D8B46A', cream:'#F7F4EF' } },
+      fontFamily: { display:['Arial','sans-serif'], sans:['Inter','Tahoma','sans-serif'] },
+      boxShadow: { glow:'0 18px 60px rgba(219,0,7,.18)' }
+    }}};
+  </script>
+  <style>
+    html{scroll-behavior:smooth} body{font-family:Inter,Tahoma,Arial,sans-serif}
+    .hero-bg{background:linear-gradient(90deg,rgba(5,14,31,.96) 0%,rgba(5,14,31,.76) 48%,rgba(5,14,31,.18) 100%),url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2200&q=85') center/cover}
+    .grain:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E")}
+    .nav-link{position:relative}.nav-link:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:2px;background:#DB0007;transition:.25s}.nav-link:hover:after{width:100%}
+    .player-card img{transition:transform .5s}.player-card:hover img{transform:scale(1.05)}
+    .timeline-line{background:linear-gradient(#DB0007,#D8B46A)}
+    .menu-panel{display:none}.menu-wrap:hover .menu-panel,.menu-wrap:focus-within .menu-panel{display:block}
+  </style>
+</head>
+<body class="bg-arsenal-cream text-slate-900">
+  <!-- Utility bar -->
+  <div class="bg-arsenal-navy text-white/80 text-xs tracking-[.16em] uppercase">
+    <div class="max-w-7xl mx-auto px-5 py-2 flex justify-between"><span>North London · Est. 1886</span><span class="hidden sm:block">Victoria Concordia Crescit</span></div>
+  </div>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <nav class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3" aria-label="Arsenal home">
+        <span class="w-12 h-12 rounded-full bg-arsenal-red text-white grid place-items-center font-black text-xl shadow-glow">A</span>
+        <span class="leading-none"><b class="block text-xl tracking-[.12em]">ARSENAL</b><small class="text-[9px] tracking-[.28em] text-slate-500">THE GUNNERS</small></span>
+      </a>
+      <button id="menuBtn" class="md:hidden p-2 text-2xl" aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+      <div id="navMenu" class="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[.13em]">
+        <a class="nav-link" href="#club">สโมสร</a>
+        <div class="menu-wrap relative"><a class="nav-link" href="#team">ทีมชุดใหญ่⌄</a>
+          <div class="menu-panel absolute top-8 left-0 w-52 bg-white shadow-xl border border-slate-100 p-3 rounded-lg">
+            <a class="block px-3 py-2 hover:bg-red-50" href="#team">ผู้เล่นทั้งหมด</a><a class="block px-3 py-2 hover:bg-red-50" href="#squad">รายชื่อนักเตะ</a><a class="block px-3 py-2 hover:bg-red-50" href="#women">Arsenal Women ↗</a>
+          </div>
+        </div>
+        <div class="menu-wrap relative"><a class="nav-link" href="#honours">เกียรติประวัติ⌄</a>
+          <div class="menu-panel absolute top-8 left-0 w-52 bg-white shadow-xl border border-slate-100 p-3 rounded-lg">
+            <a class="block px-3 py-2 hover:bg-red-50" href="#honours">ถ้วยรางวัล</a><a class="block px-3 py-2 hover:bg-red-50" href="#timeline">เส้นทางสโมสร</a>
+          </div>
+        </div>
+        <a class="nav-link" href="#news">ข่าวสาร</a><a class="nav-link" href="#stadium">สนาม</a>
+        <a href="https://www.arsenal.com/" target="_blank" rel="noopener" class="bg-arsenal-red text-white px-5 py-3 rounded-sm hover:bg-arsenal-deep transition">เว็บไซต์ทางการ ↗</a>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-6 py-4 space-y-3 text-sm font-bold">
+      <a class="block" href="#club">สโมสร</a><a class="block" href="#team">ทีมชุดใหญ่ / ผู้เล่น</a><a class="block" href="#honours">เกียรติประวัติ</a><a class="block" href="#timeline">ประวัติสโมสร</a><a class="block" href="#news">ข่าวสาร</a><a class="block" href="#stadium">สนาม</a><a class="block text-arsenal-red" href="https://www.arsenal.com/" target="_blank" rel="noopener">เว็บไซต์ทางการ ↗</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero-bg grain relative min-h-[650px] md:min-h-[720px] flex items-center text-white">
+      <div class="max-w-7xl mx-auto px-6 py-24 w-full relative z-10">
+        <p class="text-arsenal-gold text-xs md:text-sm tracking-[.35em] font-bold mb-6">NORTH LONDON · SINCE 1886</p>
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black leading-[.94] tracking-tight max-w-3xl">VICTORIA<br><span class="text-arsenal-red">CONCORDIA</span><br>CRESCIT.</h1>
+        <p class="mt-8 text-white/80 max-w-xl text-base md:text-lg leading-8">ชัยชนะเกิดจากความสามัคคี — เรื่องราวของสโมสรฟุตบอลอาร์เซนอล จากรากฐานในวูลวิช สู่หนึ่งในสโมสรฟุตบอลที่ยิ่งใหญ่ของลอนดอนและโลก</p>
+        <div class="mt-10 flex flex-wrap gap-4"><a href="#club" class="bg-arsenal-red px-7 py-4 font-bold tracking-wider hover:bg-arsenal-deep transition">ค้นพบสโมสร <span aria-hidden="true">→</span></a><a href="#honours" class="border border-white/60 px-7 py-4 font-bold tracking-wider hover:bg-white hover:text-arsenal-navy transition">เกียรติประวัติ</a></div>
+        <div class="mt-16 grid grid-cols-3 max-w-xl border-t border-white/25 pt-6 gap-5">
+          <div><b class="block text-3xl md:text-4xl">1886</b><span class="text-[10px] md:text-xs tracking-widest text-white/60">ก่อตั้งสโมสร</span></div>
+          <div><b class="block text-3xl md:text-4xl">13</b><span class="text-[10px] md:text-xs tracking-widest text-white/60">แชมป์ลีกสูงสุด*</span></div>
+          <div><b class="block text-3xl md:text-4xl">14</b><span class="text-[10px] md:text-xs tracking-widest text-white/60">เอฟเอ คัพ*</span></div>
+        </div>
+        <p class="text-[10px] text-white/45 mt-3">*สถิติทีมชายตามเกียรติประวัติที่สโมสรบันทึกไว้</p>
+      </div>
+      <div class="absolute bottom-0 right-0 text-[10vw] font-black text-white/[.04] leading-none select-none">ARSENAL</div>
+    </section>
+
+    <!-- Club intro -->
+    <section id="club" class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+        <div><p class="text-arsenal-red font-bold text-xs tracking-[.3em]">THE CLUB</p><h2 class="mt-4 text-4xl md:text-5xl font-black tracking-tight">มากกว่าสโมสร<br><span class="text-arsenal-red">คือวิถีแห่งปืนใหญ่</span></h2>
+          <p class="mt-7 text-slate-600 leading-8">อาร์เซนอลก่อตั้งขึ้นในปี ค.ศ. 1886 โดยกลุ่มคนงานจากโรงงานผลิตอาวุธ Royal Arsenal ในย่านวูลวิช ก่อนย้ายมายังลอนดอนเหนือ สโมสรมีเอกลักษณ์จากสีแดง-ขาว ฉายา “The Gunners” และตราสัญลักษณ์ปืนใหญ่</p>
+          <p class="mt-4 text-slate-600 leading-8">ภายใต้ประวัติศาสตร์อันยาวนาน อาร์เซนอลสร้างทีมที่เป็นที่จดจำหลายยุค ตั้งแต่ทีมแชมป์ไร้พ่ายฤดูกาล 2003/04 ไปจนถึงทีมรุ่นใหม่ที่มุ่งมั่นท้าทายความสำเร็จในทุกการแข่งขัน</p>
+          <a class="inline-flex mt-7 text-arsenal-red font-bold border-b-2 border-arsenal-red pb-2" href="https://www.arsenal.com/history" target="_blank" rel="noopener">อ่านประวัติจากสโมสร ↗</a>
+        </div>
+        <div class="relative"><img class="w-full h-[420px] object-cover rounded-sm shadow-2xl" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=85" alt="สนามฟุตบอลยามค่ำคืน"><div class="absolute -bottom-7 -left-5 md:-left-8 bg-arsenal-red text-white p-7 md:p-9"><b class="text-4xl block">140+</b><span class="text-xs tracking-widest">YEARS OF HERITAGE</span></div></div>
+      </div>
+    </section>
+
+    <!-- Squad -->
+    <section id="team" class="bg-arsenal-navy text-white py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"><div><p class="text-arsenal-gold text-xs font-bold tracking-[.3em]">MEET THE GUNNERS</p><h2 class="text-4xl md:text-5xl font-black mt-3">ทีมชุดใหญ่</h2><p class="text-white/55 mt-3">ตัวอย่างโปรไฟล์ผู้เล่น — ตรวจสอบรายชื่อและหมายเลขล่าสุดจากเว็บไซต์สโมสร</p></div><a href="https://www.arsenal.com/men/players" target="_blank" rel="noopener" class="border border-white/40 px-6 py-3 text-xs font-bold tracking-widest hover:bg-white hover:text-arsenal-navy transition">รายชื่อนักเตะทั้งหมด ↗</a></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="squad">
+          <article class="player-card bg-white/5 border border-white/10 overflow-hidden group"><div class="h-64 bg-gradient-to-b from-white/10 to-transparent overflow-hidden"><img class="w-full h-full object-cover object-top" src="https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=700&q=80" alt="ภาพนักฟุตบอลตัวอย่าง"></div><div class="p-5"><span class="text-arsenal-gold text-xs tracking-widest">FORWARD</span><h3 class="text-2xl font-black mt-1">Bukayo Saka</h3><p class="text-white/50 text-sm mt-1">ปีกขวา · หมายเลข 7</p><a href="https://www.arsenal.com/men/players/bukayo-saka" target="_blank" rel="noopener" class="inline-block mt-5 text-xs font-bold text-white border-b border-arsenal-red pb-1">โปรไฟล์ผู้เล่น ↗</a></div></article>
+          <article class="player-card bg-white/5 border border-white/10 overflow-hidden group"><div class="h-64 bg-gradient-to-b from-white/10 to-transparent overflow-hidden"><img class="w-full h-full object-cover object-top" src="https://images.unsplash.com/photo-1517466787929-bc9ff6dc5696?auto=format&fit=crop&w=700&q=80" alt="ภาพนักฟุตบอลตัวอย่าง"></div><div class="p-5"><span class="text-arsenal-gold text-xs tracking-widest">MIDFIELDER</span><h3 class="text-2xl font-black mt-1">Martin Ødegaard</h3><p class="text-white/50 text-sm mt-1">กองกลาง · หมายเลข 8</p><a href="https://www.arsenal.com/men/players/martin-odegaard" target="_blank" rel="noopener" class="inline-block mt-5 text-xs font-bold text-white border-b border-arsenal-red pb-1">โปรไฟล์ผู้เล่น ↗</a></div></article>
+          <article class="player-card bg-white/5 border border-white/10 overflow-hidden group"><div class="h-64 bg-gradient-to-b from-white/10 to-transparent overflow-hidden"><img class="w-full h-full object-cover object-top" src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=80" alt="ภาพนักฟุตบอลตัวอย่าง"></div><div class="p-5"><span class="text-arsenal-gold text-xs tracking-widest">MIDFIELDER</span><h3 class="text-2xl font-black mt-1">Declan Rice</h3><p class="text-white/50 text-sm mt-1">กองกลาง · หมายเลข 41</p><a href="https://www.arsenal.com/men/players/declan-rice" target="_blank" rel="noopener" class="inline-block mt-5 text-xs font-bold text-white border-b border-arsenal-red pb-1">โปรไฟล์ผู้เล่น ↗</a></div></article>
+          <article class="player-card bg-white/5 border border-white/10 overflow-hidden group"><div class="h-64 bg-gradient-to-b from-white/10 to-transparent overflow-hidden"><img class="w-full h-full object-cover object-top" src="https://images.unsplash.com/photo-1574629810360-7ef&fit=crop&w=700&q=80" alt="ภาพนักฟุตบอลตัวอย่าง"></div><div class="p-5"><span class="text-arsenal-gold text-xs tracking-widest">DEFENDER</span><h3 class="text-2xl font-black mt-1">William Saliba</h3><p class="text-white/50 text-sm mt-1">กองหลัง · หมายเลข 2</p><a href="https://www.arsenal.com/men/players/william-saliba" target="_blank" rel="noopener" class="inline-block mt-5 text-xs font-bold text-white border-b border-arsenal-red pb-1">โปรไฟล์ผู้เล่น ↗</a></div></article>
+        </div>
+        <div class="mt-8 text-xs text-white/40">หมายเหตุ: ข้อมูลผู้เล่นและหมายเลขเสื้ออาจเปลี่ยนแปลงตามตลาดซื้อขายและการลงทะเบียนของสโมสร ภาพประกอบเป็นภาพตัวอย่าง ไม่ใช่ภาพยืนยันตัวบุคคล</div>
+        <div id="women" class="mt-14 border-t border-white/15 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"><div><h3 class="text-2xl font-black">Arsenal Women</h3><p class="text-white/50 text-sm mt-1">ติดตามทีมฟุตบอลหญิงและโปรไฟล์นักเตะ</p></div><a href="https://www.arsenal.com/women" target="_blank" rel="noopener" class="text-arsenal-gold text-sm font-bold">สำรวจทีม Arsenal Women ↗</a></div>
+      </div>
+    </section>
+
+    <!-- Honours -->
+    <section id="honours" class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto"><p class="text-arsenal-red text-xs font-bold tracking-[.3em]">THE TROPHY ROOM</p><h2 class="text-4xl md:text-5xl font-black mt-3">เกียรติประวัติ</h2><p class="text-slate-500 mt-4 leading-7">ถ้วยรางวัลสำคัญของทีมชายตลอดประวัติศาสตร์สโมสร</p></div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
+          <div class="bg-white p-8 text-center shadow-sm border-b-4 border-arsenal-red"><div class="text-arsenal-gold text-4xl">🏆</div><b class="block text-5xl mt-4">13</b><span class="text-xs text-slate-500 tracking-widest">LEAGUE TITLES</span><p class="text-sm mt-3 font-semibold">แชมป์ลีกสูงสุด</p></div>
+          <div class="bg-white p-8 text-center shadow-sm border-b-4 border-arsenal-red"><div class="text-arsenal-gold text-4xl">🏆</div><b class="block text-5xl mt-4">14</b><span class="text-xs text-slate-500 tracking-widest">FA CUPS</span><p class="text-sm mt-3 font-semibold">เอฟเอ คัพ</p></div>
+          <div class="bg-white p-8 text-center shadow-sm border-b-4 border-arsenal-red"><div class="text-arsenal-gold text-4xl">🥇</div><b class="block text-5xl mt-4">2</b><span class="text-xs text-slate-500 tracking-widest">LEAGUE CUPS</span><p class="text-sm mt-3 font-semibold">ลีกคัพ</p></div>
+          <div class="bg-white p-8 text-center shadow-sm border-b-4 border-arsenal-red"><div class="text-arsenal-gold text-4xl">✨</div><b class="block text-5xl mt-4">17</b><span class="text-xs text-slate-500 tracking-widest">COMMUNITY SHIELDS</span><p class="text-sm mt-3 font-semibold">เอฟเอ คอมมิวนิตี้ ชิลด์</p></div>
+        </div>
+        <div class="mt-8 text-center"><a href="https://www.arsenal.com/history/honours" target="_blank" rel="noopener" class="inline-block text-arsenal-red font-bold border-b-2 border-arsenal-red pb-2">ดูรายการถ้วยรางวัลและปีที่คว้าแชมป์ทั้งหมด ↗</a></div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="bg-white py-24">
+      <div class="max-w-5xl mx-auto px-6"><div class="mb-14"><p class="text-arsenal-red text-xs font-bold tracking-[.3em]">OUR STORY</p><h2 class="text-4xl md:text-5xl font-black mt-3">เส้นทางแห่งตำนาน</h2></div>
+        <div class="relative ml-3 md:ml-6 border-l-2 border-slate-200 space-y-12">
+          <article class="relative pl-8 md:pl-12"><span class="absolute -left-[9px] top-1 w-4 h-4 bg-arsenal-red rounded-full ring-4 ring-red-100"></span><span class="text-arsenal-red font-black text-xl">1886</span><h3 class="text-xl font-black mt-1">กำเนิด Dial Square</h3><p class="text-slate-500 mt-2 leading-7">กลุ่มคนงานโรงงาน Royal Arsenal ก่อตั้งทีมฟุตบอลในย่านวูลวิช ก่อนใช้ชื่อ Royal Arsenal และพัฒนาเป็นสโมสรอาร์เซนอล</p></article>
+          <article class="relative pl-8 md:pl-12"><span class="absolute -left-[9px] top-1 w-4 h-4 bg-arsenal-red rounded-full ring-4 ring-red-100"></span><span class="text-arsenal-red font-black text-xl">1913</span><h3 class="text-xl font-black mt-1">ย้ายสู่ลอนดอนเหนือ</h3><p class="text-slate-500 mt-2 leading-7">สโมสรย้ายจากวูลวิชมายังไฮบิวรี จุดเริ่มต้นบทใหม่ของอาร์เซนอลในฐานะสโมสรแห่งลอนดอนเหนือ</p></article>
+          <article class="relative pl-8 md:pl-12"><span class="absolute -left-[9px] top-1 w-4 h-4 bg-arsenal-red rounded-full ring-4 ring-red-100"></span><span class="text-arsenal-red font-black text-xl">1930–1938</span><h3 class="text-xl font-black mt-1">ยุคแห่งความยิ่งใหญ่</h3><p class="text-slate-500 mt-2 leading-7">ภายใต้การคุมทีมของ Herbert Chapman และผู้สืบทอด อาร์เซนอลสร้างความสำเร็จในลีกและฟุตบอลถ้วย</p></article>
+          <article class="relative pl-8 md:pl-12"><span class="absolute -left-[9px] top-1 w-4 h-4 bg-arsenal-red rounded-full ring-4 ring-red-100"></span><span class="text-arsenal-red font-black text-xl">1989 / 1991</span><h3 class="text-xl font-black mt-1">ค่ำคืนและฤดูกาลที่ถูกจดจำ</h3><p class="text-slate-500 mt-2 leading-7">ประตูช่วงท้ายของ Michael Thomas ที่แอนฟิลด์ในปี 1989 และฤดูกาลลีก 1990/91 ที่แพ้เพียงนัดเดียว</p></article>
+          <article class="relative pl-8 md:pl-12"><span class="absolute -left-[9px] top-1 w-4 h-4 bg-arsenal-red rounded-full ring-4 ring-red-100"></span><span class="text-arsenal-red font-black text-xl">1996–2006</span><h3 class="text-xl font-black mt-1">ยุค Arsène Wenger</h3><p class="text-slate-500 mt-2 leading-7">อาร์เซนอลคว้าแชมป์พรีเมียร์ลีก 3 สมัยและเอฟเอ คัพหลายสมัย พร้อมสร้างทีม “Invincibles” ในฤดูกาล 2003/04</p></article>
+          <article class="relative pl-8 md:pl-12"><span class="absolute -left-[9px] top-1 w-4 h-4 bg-arsenal-red rounded-full ring-4 ring-red-100"></span><span class="text-arsenal-red font-black text-xl">2006–ปัจจุบัน</span><h3 class="text-xl font-black mt-1">จาก Emirates สู่บทใหม่</h3><p class="text-slate-500 mt-2 leading-7">ย้ายสู่เอมิเรตส์ สเตเดียมในปี 2006 และเดินหน้าสร้างทีมรุ่นใหม่เพื่อความสำเร็จในเวทีอังกฤษและยุโรป</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stadium -->
+    <section id="stadium" class="grid lg:grid-cols-2 bg-arsenal-red text-white">
+      <div class="min-h-[360px]"><img class="w-full h-full object-cover min-h-[360px]" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=85" alt="บรรยากาศสนามฟุตบอล"></div>
+      <div class="p-10 md:p-16 lg:p-20 flex flex-col justify-center"><p class="text-white/65 text-xs tracking-[.3em] font-bold">OUR HOME</p><h2 class="text-4xl md:text-5xl font-black mt-3">Emirates<br>Stadium</h2><p class="mt-6 leading-8 text-white/85">บ้านของอาร์เซนอลตั้งอยู่ในย่านฮอลโลเวย์ ลอนดอนเหนือ เปิดใช้งานในปี 2006 รองรับแฟนบอลได้มากกว่า 60,000 คน และเป็นหนึ่งในสนามฟุตบอลที่โดดเด่นของอังกฤษ</p><a class="mt-8 font-bold border-b border-white self-start pb-2" href="https://www.arsenal.com/emirates-stadium" target="_blank" rel="noopener">ข้อมูลการเดินทางและทัวร์สนาม ↗</a></div>
+    </section>
+
+    <!-- News / links -->
+    <section id="news" class="py-24">
+      <div class="max-w-7xl mx-auto px-6"><div class="flex flex-col md:flex-row md:justify-between md:items-end gap-5 mb-10"><div><p class="text-arsenal-red text-xs font-bold tracking-[.3em]">STAY CONNECTED</p><h2 class="text-4xl md:text-5xl font-black mt-3">ติดตามทุกความเคลื่อนไหว</h2></div><a href="https://www.arsenal.com/news" target="_blank" rel="noopener" class="text-arsenal-red font-bold">ข่าวทั้งหมดจากสโมสร ↗</a></div>
+        <div class="grid md:grid-cols-3 gap-5">
+          <a href="https://www.arsenal.com/fixtures" target="_blank" rel="noopener" class="group bg-white p-7 shadow-sm hover:shadow-xl transition"><span class="text-arsenal-red text-xs font-bold tracking-widest">FIXTURES</span><h3 class="text-2xl font-black mt-5 group-hover:text-arsenal-red">โปรแกรมการแข่งขัน</h3><p class="text-slate-500 mt-3 text-sm leading-6">ตรวจสอบวัน เวลา และรายการแข่งขันของทีม</p><span class="block mt-8 font-bold text-sm">ดูโปรแกรม ↗</span></a>
+          <a href="https://www.arsenal.com/tickets" target="_blank" rel="noopener" class="group bg-white p-7 shadow-sm hover:shadow-xl transition"><span class="text-arsenal-red text-xs font-bold tracking-widest">TICKETS</span><h3 class="text-2xl font-black mt-5 group-hover:text-arsenal-red">บัตรเข้าชม</h3><p class="text-slate-500 mt-3 text-sm leading-6">ข้อมูลตั๋วเข้าชมและบริการสำหรับแฟนบอล</p><span class="block mt-8 font-bold text-sm">รายละเอียดบัตร ↗</span></a>
+          <a href="https://www.arsenal.com/news" target="_blank" rel="noopener" class="group bg-white p-7 shadow-sm hover:shadow-xl transition"><span class="text-arsenal-red text-xs font-bold tracking-widest">LATEST NEWS</span><h3 class="text-2xl font-black mt-5 group-hover:text-arsenal-red">ข่าวสารล่าสุด</h3><p class="text-slate-500 mt-3 text-sm leading-6">ข่าวทีม บทสัมภาษณ์ และเรื่องราวจากสโมสร</p><span class="block mt-8 font-bold text-sm">อ่านข่าว ↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Premium footer -->
+  <footer class="bg-[#06152d] text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-12">
+      <div class="md:col-span-2"><div class="flex items-center gap-3"><span class="w-12 h-12 rounded-full bg-arsenal-red grid place-items-center font-black text-xl">A</span><span class="text-2xl font-black tracking-[.15em]">ARSENAL</span></div><p class="text-white/50 max-w-md mt-6 leading-7">Victoria Concordia Crescit. ชัยชนะเกิดจากความสามัคคี — พื้นที่สำหรับแฟนบอลที่ต้องการเรียนรู้ประวัติศาสตร์ ผู้เล่น และเรื่องราวของสโมสร</p><div class="flex gap-4 mt-7 text-sm"><a href="https://www.facebook.com/Arsenal/" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-arsenal-gold">Facebook ↗</a><a href="https://www.instagram.com/arsenal/" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-arsenal-gold">Instagram ↗</a><a href="https://www.youtube.com/arsenal" target="_blank" rel="noopener" aria-label="YouTube" class="hover:text-arsenal-gold">YouTube ↗</a></div></div>
+      <div><h4 class="font-black tracking-widest text-sm">สำรวจเว็บไซต์</h4><ul class="mt-6 space-y-3 text-sm text-white/55"><li><a class="hover:text-white" href="#club">เกี่ยวกับสโมสร</a></li><li><a class="hover:text-white" href="#team">ทีมและผู้เล่น</a></li><li><a class="hover:text-white" href="#honours">เกียรติประวัติ</a></li><li><a class="hover:text-white" href="#timeline">ประวัติสโมสร</a></li></ul></div>
+      <div><h4 class="font-black tracking-widest text-sm">ลิงก์สำคัญ</h4><ul class="mt-6 space-y-3 text-sm text-white/55"><li><a class="hover:text-white" href="https://www.arsenal.com/" target="_blank" rel="noopener">Arsenal.com ↗</a></li><li><a class="hover:text-white" href="https://www.arsenal.com/men/players" target="_blank" rel="noopener">Men's team ↗</a></li><li><a class="hover:text-white" href="https://www.arsenal.com/women" target="_blank" rel="noopener">Women's team ↗</a></li><li><a class="hover:text-white" href="https://www.arsenal.com/club" target="_blank" rel="noopener">Club information ↗</a></li></ul></div>
+    </div>
+    <div class="border-t border-white/10"><div class="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row gap-3 justify-between text-xs text-white/35"><span>© 2026 Arsenal Fan Experience. Demo website for educational / design purposes.</span><span>Not affiliated with or endorsed by Arsenal Football Club.</span></div></div>
+  </footer>
+
+  <button id="backTop" class="fixed bottom-6 right-6 bg-arsenal-red text-white w-12 h-12 rounded-full shadow-xl hidden" aria-label="กลับขึ้นด้านบน">↑</button>
+  <script>
+    const btn=document.getElementById('menuBtn'), mobile=document.getElementById('mobileMenu'), nav=document.getElementById('navMenu');
+    btn.addEventListener('click',()=>{const open=mobile.classList.toggle('hidden')===false;btn.setAttribute('aria-expanded',String(open));btn.textContent=open?'×':'☰';});
+    mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.classList.add('hidden');btn.setAttribute('aria-expanded','false');btn.textContent='☰';}));
+    const topBtn=document.getElementById('backTop');window.addEventListener('scroll',()=>topBtn.classList.toggle('hidden',window.scrollY<500));topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  </script>
+</body>
+</html>
